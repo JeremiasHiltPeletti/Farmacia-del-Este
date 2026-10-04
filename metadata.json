@@ -1,0 +1,10 @@
+{
+  "name": "Farmacia del Este",
+  "description": "App para gestión interna de Farmacia del Este con escaneo de código de barras.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

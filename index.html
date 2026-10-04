@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Farmacia del Este</title>
+    
+    <!-- PWA Settings -->
+    <link rel="manifest" href="/manifest.json?v=9" />
+    <meta name="theme-color" content="#f0f9ff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Farmacia">
+    
+    <script>
+      const originalLog = console.log;
+      console.log = function(...args) {
+        if (typeof args[0] === 'string') {
+          if (args[0].includes('WebSocketInterceptor-Proxy') ||
+              args[0].includes('Service Worker registered') ||
+              args[0].includes('Service Worker:')) {
+            return;
+          }
+        }
+        originalLog.apply(console, args);
+      };
+      const originalInfo = console.info;
+      console.info = function(...args) {
+        if (typeof args[0] === 'string' && args[0].includes('WebSocketInterceptor-Proxy')) return;
+        originalInfo.apply(console, args);
+      };
+    </script>
+
+    <!-- Icono para el Navegador (Pestaña) -->
+    <link rel="icon" type="image/png" href="/farmacia_del_este_logo.png" />
+    
+    <!-- Icono para Pantalla de Inicio (iOS) - Forzamos v8 -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/pwa_icon.png?v=9">
+
+    <!-- Styles are now in /index.css -->
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
+    "firebase/": "https://esm.sh/firebase@^12.9.0/",
+    "firebase/messaging": "https://esm.sh/firebase@^12.9.0/messaging",
+    "@capacitor/core": "https://esm.sh/@capacitor/core@^8.0.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#f0f9ff] text-slate-800 select-none">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
