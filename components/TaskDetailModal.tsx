@@ -8,6 +8,7 @@ import { USERS } from '../constants';
 import { DateInput, TimeSelect } from './CustomInputs.tsx';
 import { fileToBase64, generateUUID } from '../utils.ts';
 import { RichTextEditor } from './RichTextEditor.tsx';
+import { sanitizeRichText } from '../sanitize.ts';
 
 interface TaskDetailModalProps {
   taskId: string;
@@ -555,7 +556,7 @@ export const TaskDetailModal: React.FC<TaskDetailModalProps> = ({ taskId, onClos
                         [&>b]:font-bold 
                         [&>i]:italic 
                         [&>u]:underline"
-                        dangerouslySetInnerHTML={{ __html: task.description }}
+                        dangerouslySetInnerHTML={{ __html: sanitizeRichText(task.description) }}
                       />
                    ) : (
                       <p className="text-gray-400 text-sm italic">Sin notas adicionales.</p>

@@ -1,6 +1,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { Icons } from './Icon.tsx';
+import { sanitizeRichText } from '../sanitize.ts';
 
 interface RichTextEditorProps {
   value: string;
@@ -18,14 +19,14 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ value, onChange,
         // Only update if the content is truly different (avoids cursor jumping)
         // Simple check: if empty and value provided, or if strictly different logic needed
         if(value === '' && editorRef.current.innerHTML === '<br>') return;
-        editorRef.current.innerHTML = value;
+        editorRef.current.innerHTML = sanitizeRichText(value);
     }
   }, []); // Run once on mount to set initial value. Updating on every render causes cursor issues.
 
   const handleInput = () => {
     if (editorRef.current) {
       const html = editorRef.current.innerHTML;
-      onChange(html === '<br>' ? '' : html);
+      onChange(html === '<br>' ? '' : sanitizeRichText(html));
     }
   };
 
