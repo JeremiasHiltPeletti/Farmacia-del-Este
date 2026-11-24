@@ -1,0 +1,9 @@
+# Headers de seguridad (Netlify). Ver auditoría de seguridad, punto 7.
+# La CSP está en modo Report-Only: se pasa a Content-Security-Policy una vez validada.
+/*
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://ui-avatars.com https://images.unsplash.com https://user-images.githubusercontent.com; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(self), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
