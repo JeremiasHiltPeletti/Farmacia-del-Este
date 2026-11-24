@@ -41,7 +41,7 @@ React, TypeScript, Vite, Tailwind CSS y React Router para la interfaz. `localFor
 | `context.tsx`, `types.ts` | Estado compartido y tipos de datos |
 | `mockFirestore.ts`, `constants.ts` | Persistencia local y registros iniciales de ejemplo |
 | `modules/barcode/` | Validación, búsqueda e importación de referencias |
-| `public/manifest.json`, `service-worker.js` | Metadatos de instalación y service worker |
+| `public/manifest.json`, `public/service-worker.js` | Metadatos de instalación y service worker |
 | `vite.config.ts`, `public/_headers` | Entorno de desarrollo y headers de seguridad para Netlify |
 
 ## Ejecutar en local

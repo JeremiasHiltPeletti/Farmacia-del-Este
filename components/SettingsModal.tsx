@@ -165,7 +165,7 @@ export const SettingsModal: React.FC<{ onClose: () => void }> = ({ onClose }) =>
                   <div className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-4">Color de Iniciales</div>
                   <div className="flex flex-wrap gap-3 mb-6">
                       {INITIAL_COLORS.map((col) => {
-                          const url = `https://ui-avatars.com/api/?name=${editName}&background=${col.bg}&color=${col.fg}&rounded=true&bold=true`;
+                          const url = `https://ui-avatars.com/api/?name=${encodeURIComponent(editName)}&background=${col.bg}&color=${col.fg}&rounded=true&bold=true`;
                           return (
                             <button
                                 key={col.name}

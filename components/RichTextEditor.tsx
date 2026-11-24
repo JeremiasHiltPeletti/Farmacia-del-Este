@@ -95,9 +95,9 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ value, onChange,
         contentEditable
         onInput={handleInput}
         className="w-full p-4 min-h-[120px] max-h-[300px] overflow-y-auto focus:outline-none text-sm text-gray-700 leading-relaxed
-        [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-2
-        [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:mb-2
-        [&>li]:mb-1
+        [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-2
+        [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:mb-2
+        [&_li]:mb-1
         empty:before:content-[attr(data-placeholder)] empty:before:text-gray-400 cursor-text"
         data-placeholder={placeholder || 'Escribe aquí...'}
       />

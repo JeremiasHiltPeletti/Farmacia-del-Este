@@ -550,9 +550,9 @@ export const TaskDetailModal: React.FC<TaskDetailModalProps> = ({ taskId, onClos
                    {task.description ? (
                       <div 
                         className="text-gray-600 text-sm leading-relaxed 
-                        [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:mb-2 
-                        [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:mb-2 
-                        [&>li]:mb-1
+                        [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-2 
+                        [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:mb-2 
+                        [&_li]:mb-1
                         [&>b]:font-bold 
                         [&>i]:italic 
                         [&>u]:underline"
