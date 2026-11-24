@@ -42,7 +42,7 @@ React, TypeScript, Vite, Tailwind CSS y React Router para la interfaz. `localFor
 | `mockFirestore.ts`, `constants.ts` | Persistencia local y registros iniciales de ejemplo |
 | `modules/barcode/` | Validación, búsqueda e importación de referencias |
 | `public/manifest.json`, `service-worker.js` | Metadatos de instalación y service worker |
-| `server.js`, `vite.config.ts` | Servicio de archivos compilados y entorno de desarrollo |
+| `vite.config.ts`, `public/_headers` | Entorno de desarrollo y headers de seguridad para Netlify |
 
 ## Ejecutar en local
 
@@ -70,7 +70,7 @@ Los cambios se almacenan en el navegador del dispositivo; borrar los datos del s
 
 ## Decisiones técnicas
 
-`mockFirestore.ts` implementa una capa local que imita parte de la API de Firestore, mientras que `firebase.ts` contiene funciones de reemplazo. Aunque Firebase figura entre las dependencias, **esta versión no sincroniza datos con Firebase ni entre dispositivos**. Las integraciones externas están desactivadas y no se ejecuta un modelo de IA durante el uso de esta versión.
+`mockFirestore.ts` implementa una capa local que imita parte de la API de Firestore, mientras que `firebase.ts` contiene funciones de reemplazo. **Esta versión no sincroniza datos con Firebase ni entre dispositivos**. Las integraciones externas están desactivadas y no se ejecuta un modelo de IA durante el uso de esta versión.
 
 ---
 
